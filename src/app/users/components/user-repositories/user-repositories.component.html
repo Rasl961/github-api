@@ -1,0 +1,47 @@
+<div class="users-header-actions">
+  <a mat-button class="nav-btn" routerLink="/">Back</a>
+</div>
+<div class="mat-elevation-z8 users-table-container">
+  <table mat-table [dataSource]="dataSource">
+    <span>dataSource.length</span>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <!-- Url Column -->
+    <ng-container matColumnDef="url">
+      <th mat-header-cell *matHeaderCellDef> Url </th>
+      <td mat-cell *matCellDef="let element"><a href="{{element.html_url}}">{{element.html_url}}</a></td>
+    </ng-container>
+
+    <!-- Forks count Column -->
+    <ng-container matColumnDef="forks_count">
+      <th mat-header-cell *matHeaderCellDef> Forks </th>
+      <td mat-cell *matCellDef="let element"> {{element.forks_count}} </td>
+    </ng-container>
+
+    <!-- Watchers count Column -->
+    <ng-container matColumnDef="watchers_count">
+      <th mat-header-cell *matHeaderCellDef> Watchers </th>
+      <td mat-cell *matCellDef="let element"> {{element.watchers_count}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="no-results" [style.display]="totalRepos === 0 ? '' : 'none'">
+    No results
+  </div>
+  <mat-paginator [length]="totalRepos" [pageSize]="reposPerPage" showFirstLastButtons
+    (page)="onChangedPage($event)">
+  </mat-paginator>
+</div>

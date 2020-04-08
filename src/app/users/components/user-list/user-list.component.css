@@ -1,0 +1,29 @@
+.users-table-container,
+.search-box,
+.users-header-actions {
+  width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  text-align: center;
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+  font-size: 14px;
+  font-style: italic;
+}

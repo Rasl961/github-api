@@ -1,0 +1,32 @@
+
+.users-header-actions {
+  width: 80%;
+  margin: 0 auto;
+}
+.nav-btn {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.users-table-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  text-align: center;
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+  font-size: 14px;
+  font-style: italic;
+}

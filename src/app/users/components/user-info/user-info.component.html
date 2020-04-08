@@ -1,0 +1,22 @@
+<div class="user-cards">
+  <div class="button-row">
+     <a mat-button routerLink="/">Back</a>
+  </div>
+  <mat-card class="user-card" *ngIf="user$ | async as user">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>User Information</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{user.avatar_url}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>Username: {{user.login ? user.login : 'N/A'}}</p>
+      <p>Company: {{user.company ? user.company : 'N/A'}}</p>
+      <p>Email: {{user.email ? user.email : 'N/A'}}</p>
+      <p>Followers: {{user.followers ? user.followers: 'N/A'}}</p>
+      <p>Updated at: {{user.updated_at|date}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="accent" (click)="navigateToRepo()">Repo</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

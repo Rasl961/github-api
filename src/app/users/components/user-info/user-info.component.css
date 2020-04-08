@@ -1,0 +1,16 @@
+.user-cards {
+  padding: 2rem;
+}
+
+.user-card {
+  width: 50%;
+  margin: 0 auto;
+}
+
+mat-card-image {
+  height: 100px;
+}
+
+mat-card-actions button {
+  width: 100%;
+}
